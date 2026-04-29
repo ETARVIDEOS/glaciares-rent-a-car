@@ -7,30 +7,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const carsData = [
         {
             id: 1,
-            name: 'Peugeot 3008',
-            image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            price: '$45.000 / día',
-            transmission: 'Automático',
+            name: 'City Car (Sedan)',
+            image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            price: 'Desde $35.000 / día',
+            transmission: 'Manual/Auto',
             passengers: '5 Pasajeros',
-            bags: '3 Maletas'
+            bags: '2 Maletas'
         },
         {
             id: 2,
-            name: 'Toyota Hilux 4x4',
-            image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            price: '$60.000 / día',
-            transmission: 'Manual',
+            name: 'SUV Familiar',
+            image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            price: 'Desde $45.000 / día',
+            transmission: 'Manual/Auto',
             passengers: '5 Pasajeros',
             bags: '4 Maletas'
         },
         {
             id: 3,
-            name: 'Jeep Compass',
-            image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            price: '$50.000 / día',
-            transmission: 'Automático',
+            name: 'Camioneta 4x4',
+            image: 'https://images.unsplash.com/photo-1559416523-140ddc3d238c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            price: 'Desde $60.000 / día',
+            transmission: 'Manual/Auto',
             passengers: '5 Pasajeros',
-            bags: '3 Maletas'
+            bags: '4 Maletas'
         }
     ];
 
@@ -164,5 +164,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const floatingBtn = document.getElementById('floating-wa');
     if (floatingBtn) {
         floatingBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola,%20me%20gustar%C3%ADa%20cotizar%20un%20arriendo%20de%20veh%C3%ADculo.`;
+    }
+    // --- 7. Acordeón Términos y Condiciones ---
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            if (header.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                content.style.maxHeight = null;
+            }
+        });
+    });
+
+    // --- 8. Formulario de Contacto a WhatsApp ---
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const fechas = document.getElementById('fechas').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            const texto = `Hola Glaciares Rent a Car. Mi nombre es ${nombre}. Fechas de viaje: ${fechas}. Mensaje: ${mensaje}`;
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`;
+            window.open(url, '_blank');
+        });
     }
 });
