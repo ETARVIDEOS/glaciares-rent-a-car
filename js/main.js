@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cardHTML = `
                 <div class="car-card animate__animated animate__fadeInUp" style="animation-delay: ${delay}s" data-id="${car.id}">
                     <div class="car-image-container">
-                        <img src="${car.image}" alt="${car.name}" class="car-image">
+                        <img src="${car.image}" alt="${car.name}" class="car-image" loading="lazy">
                     </div>
                     <div class="car-info">
                         <h3 class="car-title">${car.name}</h3>
