@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
             price: '$45.000 / día',
             transmission: 'Mecánico',
             passengers: '5',
-            fuel: 'Bencina'
+            fuel: 'Bencina',
+            scale: 1.15
         },
         {
             id: 3,
@@ -33,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
             price: '$45.000 / día',
             transmission: 'Mecánico',
             passengers: '7',
-            fuel: 'Bencina'
+            fuel: 'Bencina',
+            scale: 1.35
         },
         {
             id: 4,
@@ -43,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             price: '$45.000 / día',
             transmission: 'Automático',
             passengers: '5',
-            fuel: 'Bencina'
+            fuel: 'Bencina',
+            scale: 1.35
         },
         {
             id: 5,
@@ -63,7 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
             price: '$65.000 / día',
             transmission: 'Mecánico',
             passengers: '9',
-            fuel: 'Diesel'
+            fuel: 'Diesel',
+            scale: 1.15
         }
     ];
 
@@ -86,7 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const cardHTML = `
                 <div class="car-card animate__animated animate__fadeInUp" style="animation-delay: ${delay}s" data-id="${car.id}">
                     <div class="car-image-container">
-                        <img src="${car.image}" alt="${car.name}" class="car-image" loading="lazy">
+                        <div class="car-image-wrapper" style="width: 100%; height: 100%; ${car.scale ? `transform: scale(${car.scale});` : ''}">
+                            <img src="${car.image}" alt="${car.name}" class="car-image" loading="lazy">
+                        </div>
                     </div>
                     <div class="car-info">
                         <h3 class="car-title">${car.name}</h3>
