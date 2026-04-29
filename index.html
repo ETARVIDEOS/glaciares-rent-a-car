@@ -29,21 +29,31 @@
     <header class="header">
         <div class="container header-content">
             <a href="#" class="logo">
-                <img src="assets/logo.jpeg" alt="Glaciares Rent a Car Logo">
+                <img src="LOGOSINFONDO.png" alt="Glaciares Rent a Car Logo">
             </a>
             <nav class="nav">
                 <a href="#inicio">Inicio</a>
                 <a href="#servicios">Servicios</a>
                 <a href="#flota">Nuestra Flota</a>
-                <a href="#lugares">Lugares</a>
+                <a href="#lugares">Destinos</a>
                 <a href="#nosotros">Nosotros</a>
                 <a href="#contacto">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section (Premium Parallax + Typed + Shape Divider) -->
-    <section id="inicio" class="hero parallax-bg">
+    <!-- Hero Section (Premium Slider + Typed + Shape Divider) -->
+    <section id="inicio" class="hero">
+        <!-- Hero Background Slider -->
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="PAISAJES/142423.webp" alt="Paisaje Patagonia"></div>
+                <div class="swiper-slide"><img src="PAISAJES/patagonia-landscape-perito-moreno-glacier-autumnal-forest-lake-argentina-scenery-photo.jpg" alt="Glaciares"></div>
+                <div class="swiper-slide"><img src="PAISAJES/Circuitos-Torres-del-Paine-Ecordua29-1024x683.webp" alt="Torres del Paine"></div>
+                <div class="swiper-slide"><img src="PAISAJES/patagonia-best-photos.jpg" alt="Patagonia Sur"></div>
+            </div>
+        </div>
+        
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <span class="badge anim-elem" data-animation="animate__fadeInDown">Excelencia al Servicio del Turista</span>
@@ -122,7 +132,7 @@
         </div>
     </section>
 
-    <!-- Flota Section -->
+    <!-- Flota Section (Tabs & Modal) -->
     <section id="flota" class="flota section">
         <div class="container">
             <div class="section-title anim-elem" data-animation="animate__fadeInUp">
@@ -131,52 +141,103 @@
                 <div class="separator-line"></div>
             </div>
 
+            <!-- Tabs de Categorías -->
+            <div class="category-tabs anim-elem" data-animation="animate__fadeInUp">
+                <button class="tab-btn active" data-category="todos">Todos</button>
+                <button class="tab-btn" data-category="Citycar">Citycar</button>
+                <button class="tab-btn" data-category="SUV">SUV</button>
+                <button class="tab-btn" data-category="Furgón">Furgón</button>
+            </div>
+
             <div class="grid cars-grid" id="cars-grid">
                 <!-- Se inyecta por JS -->
             </div>
         </div>
     </section>
 
-    <!-- Lugares Turísticos (Efecto Glassmorphism / Image Zoom) -->
-    <section id="lugares" class="lugares section parallax-bg-2">
-        <div class="hero-overlay" style="opacity: 0.85;"></div>
+    <!-- Destinos Turísticos (Tailwind-like Logic) -->
+    <section id="lugares" class="lugares section parallax-bg-2" style="background-image: url('PAISAJES/patagonia-2-weeks-itinerary-chile-argentina-main-image-hd-op.jpg');">
+        <div class="hero-overlay" style="opacity: 0.90; background: linear-gradient(135deg, rgba(243, 244, 246, 0.95) 0%, rgba(229, 231, 235, 0.95) 100%);"></div>
         <div class="container" style="position: relative; z-index: 2;">
-            <div class="section-title anim-elem" data-animation="animate__fadeInUp" style="color: white;">
-                <h2>Destinos Imperdibles</h2>
-                <p>Conecta con la naturaleza en los lugares más impresionantes del fin del mundo.</p>
-                <div class="separator-line bg-white"></div>
+            <div class="section-title anim-elem" data-animation="animate__fadeInUp">
+                <h2 class="text-dark-xl">Descubre la Región de Magallanes</h2>
+                <p class="text-gray-medium">Los destinos más impresionantes que puedes visitar con nuestros vehículos.</p>
+                <div class="separator-line"></div>
             </div>
             
-            <div class="grid places-grid">
-                <!-- Cards con estilo glassmorphism -->
-                <div class="place-card glass-card anim-elem" data-animation="animate__zoomIn">
-                    <div class="place-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1518182170546-076616fdfaaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Torres del Paine">
+            <div class="places-grid-tailwind">
+                <!-- Tarjeta 1 -->
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn">
+                    <div class="tw-img-wrapper">
+                        <img src="SECCION LUGARES TURISTICOS/TORRES DEL PAINE.jpg" alt="Parque Nacional Torres del Paine" class="hover-scale">
                     </div>
-                    <div class="place-info">
-                        <h3>Torres del Paine</h3>
-                        <p>Ícono mundial de la Patagonia. Recorre el parque a tu propio ritmo con nuestros SUV.</p>
-                    </div>
-                </div>
-                
-                <div class="place-card glass-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.2s">
-                    <div class="place-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1589139682522-8646b9a8e0f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pingüinos">
-                    </div>
-                    <div class="place-info">
-                        <h3>Pingüineras</h3>
-                        <p>Observa a miles de pingüinos de Magallanes en su hábitat natural en Isla Magdalena.</p>
+                    <div class="tw-info">
+                        <h3>Parque Nacional Torres del Paine</h3>
+                        <p>Ícono mundial de la Patagonia. Maravíllate con sus picos de granito, lagos glaciares y fauna silvestre. Perfecto para recorrer en un SUV.</p>
                     </div>
                 </div>
                 
-                <div class="place-card glass-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.4s">
-                    <div class="place-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1584998246820-2f3b940e729a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Glaciares">
+                <!-- Tarjeta 2 -->
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.1s">
+                    <div class="tw-img-wrapper">
+                        <img src="SECCION LUGARES TURISTICOS/MOMUMENTO LOS PINGUINOS.jpg" alt="Monumento Natural Los Pingüinos" class="hover-scale">
                     </div>
-                    <div class="place-info">
-                        <h3>Glaciares Milenarios</h3>
-                        <p>Maravíllate con el hielo eterno de los glaciares Serrano, Balmaceda o Perito Moreno (Arg).</p>
+                    <div class="tw-info">
+                        <h3>Monumento Natural Los Pingüinos</h3>
+                        <p>Conduce hasta el muelle y navega a Isla Magdalena para caminar entre miles de pingüinos en su hábitat natural.</p>
                     </div>
+                </div>
+                
+                <!-- Tarjeta 3 -->
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.2s">
+                    <div class="tw-img-wrapper">
+                        <img src="SECCION LUGARES TURISTICOS/Parque-del-estrecho.jpg" alt="Fuerte Bulnes" class="hover-scale">
+                    </div>
+                    <div class="tw-info">
+                        <h3>Parque del Estrecho (Fuerte Bulnes)</h3>
+                        <p>A solo 50 km al sur de Punta Arenas. Un viaje lleno de historia y paisajes costeros impresionantes.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4 -->
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.3s">
+                    <div class="tw-img-wrapper">
+                        <img src="SECCION LUGARES TURISTICOS/place-des-armes-munoz-gamero--v1-1200-800.jpeg" alt="Plaza de Armas" class="hover-scale">
+                    </div>
+                    <div class="tw-info">
+                        <h3>Plaza de Armas Muñoz Gamero</h3>
+                        <p>El corazón histórico de Punta Arenas. Rodeada de palacios antiguos y la icónica estatua de Hernando de Magallanes.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 5 -->
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.4s">
+                    <div class="tw-img-wrapper">
+                        <img src="SECCION LUGARES TURISTICOS/COSTANERA DEL ESTRECHO.jpg" alt="Costanera del Estrecho" class="hover-scale">
+                    </div>
+                    <div class="tw-info">
+                        <h3>Costanera del Estrecho</h3>
+                        <p>Un paseo imperdible por la ciudad con vista directa al majestuoso Estrecho de Magallanes y Tierra del Fuego.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 6 -->
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.5s">
+                    <div class="tw-img-wrapper">
+                        <img src="SECCION LUGARES TURISTICOS/FARO SAN ISIDRO.jpg" alt="Faro San Isidro" class="hover-scale">
+                    </div>
+                    <div class="tw-info">
+                        <h3>Faro San Isidro</h3>
+                        <p>Conduce hasta el fin del camino y emprende una caminata única hacia el histórico faro que ilumina el estrecho.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa de la Aventura -->
+            <div class="map-container premium-shadow anim-elem" data-animation="animate__fadeInUp">
+                <h3>Mapa de la Aventura</h3>
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4905183.176421319!2d-78.29340625906354!3d-52.012554699566996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdb46af493a5eaeb%3A0xc6ba0cdb6859e9a4!2sRegi%C3%B3n%20de%20Magallanes%20y%20de%20la%20Ant%C3%A1rtica%20Chilena!5e0!3m2!1ses-419!2scl!4v1714000000000!5m2!1ses-419!2scl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -194,7 +255,7 @@
         <div class="container">
             <div class="nosotros-content">
                 <div class="nosotros-img anim-elem" data-animation="animate__slideInLeft">
-                    <img src="assets/logo.jpeg" alt="Glaciares Rent a Car" class="premium-shadow">
+                    <img src="LOGOSINFONDO.png" alt="Glaciares Rent a Car" class="premium-shadow" style="background-color: var(--primary-color);">
                 </div>
                 <div class="nosotros-text anim-elem" data-animation="animate__slideInRight">
                     <h2 class="dual-color">Compromiso con la Excelencia</h2>
@@ -208,7 +269,7 @@
         </div>
     </section>
 
-    <!-- Carrusel de Testimonios (Estilo Elementor) -->
+    <!-- Carrusel de Testimonios -->
     <section class="testimonios section" style="background-color: var(--bg-light);">
         <div class="container">
             <div class="section-title anim-elem" data-animation="animate__fadeInUp">
@@ -217,10 +278,8 @@
                 <div class="separator-line"></div>
             </div>
             
-            <!-- Swiper -->
             <div class="swiper testimonial-swiper anim-elem" data-animation="animate__fadeInUp">
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="stars">
@@ -258,13 +317,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
-    <!-- Términos y Condiciones (Acordeón) -->
+    <!-- Términos y Condiciones -->
     <section id="terminos" class="terminos section">
         <div class="container">
             <div class="section-title anim-elem" data-animation="animate__fadeInUp">
@@ -339,7 +397,7 @@
     <footer class="footer section">
         <div class="container footer-content">
             <div class="footer-brand">
-                <img src="assets/logo.jpeg" alt="Glaciares Logo" class="footer-logo">
+                <img src="LOGOSINFONDO.png" alt="Glaciares Logo" class="footer-logo">
                 <p>Tu socio de confianza en la Patagonia.</p>
             </div>
             <div class="footer-links">
@@ -368,6 +426,32 @@
 
     <!-- Social Proof Toast -->
     <div id="toast-container" class="toast-container"></div>
+
+    <!-- Modal de Detalles del Vehículo -->
+    <div id="car-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img-wrapper">
+                    <img id="modal-img" src="" alt="Vehículo">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title" class="dual-color" style="margin-bottom: 5px;"></h2>
+                    <span id="modal-category" class="badge-sm"></span>
+                    <p id="modal-price" class="car-price-large" style="margin-top: 15px;"></p>
+                    
+                    <ul class="modal-specs">
+                        <li><i class="fa-solid fa-users"></i> <span id="modal-pax"></span> Pasajeros</li>
+                        <li><i class="fa-solid fa-gear"></i> <span id="modal-trans"></span></li>
+                        <li><i class="fa-solid fa-gas-pump"></i> <span id="modal-fuel"></span></li>
+                    </ul>
+                    <a href="#" id="modal-ws-btn" target="_blank" class="btn btn-primary btn-block">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar Reserva
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts CDN -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

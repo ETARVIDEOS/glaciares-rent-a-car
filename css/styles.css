@@ -69,6 +69,16 @@ h1, h2, h3, h4 {
     display: inline-block;
 }
 
+.text-dark-xl {
+    font-size: 2.5rem;
+    color: #1f2937; /* tailwind gray-800 */
+    font-weight: 800;
+}
+.text-gray-medium {
+    color: #6b7280; /* tailwind gray-500 */
+    font-size: 1.1rem;
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 50px;
@@ -119,7 +129,9 @@ h1, h2, h3, h4 {
 }
 
 .logo img {
-    height: 60px;
+    height: 50px; /* Reduced to fit better */
+    background-color: var(--primary-color); /* Contrast for white logo */
+    padding: 5px 10px;
     border-radius: var(--radius-sm);
 }
 
@@ -135,23 +147,7 @@ h1, h2, h3, h4 {
     color: var(--secondary-color);
 }
 
-/* --- Hero Section (Parallax & Shape Dividers) --- */
-.parallax-bg {
-    background-image: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.parallax-bg-2 {
-    background-image: url('https://images.unsplash.com/photo-1518182170546-076616fdfaaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
+/* --- Hero Section (Swiper Background) --- */
 .hero {
     position: relative;
     padding: 150px 0 180px;
@@ -160,12 +156,24 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* For swiper */
+}
+
+.hero-swiper {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+}
+.hero-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(135deg, rgba(10, 37, 64, 0.9) 0%, rgba(10, 37, 64, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(10, 37, 64, 0.95) 0%, rgba(10, 37, 64, 0.6) 100%);
     z-index: 1;
 }
 
@@ -335,9 +343,41 @@ h1, h2, h3, h4 {
     color: var(--bg-white);
 }
 
-/* --- Flota --- */
+/* --- Flota y Tabs --- */
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 10px 25px;
+    background-color: var(--bg-white);
+    border: 2px solid #E2E8F0;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab-btn:hover {
+    border-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+}
+
 .cars-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .car-card {
@@ -346,23 +386,31 @@ h1, h2, h3, h4 {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    cursor: pointer; /* To indicate it opens modal */
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .car-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--secondary-color);
 }
 
 .car-image-container {
     width: 100%;
-    height: 220px;
+    height: 200px;
     overflow: hidden;
+    background-color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
 .car-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     transition: transform 0.5s;
 }
 
@@ -371,83 +419,213 @@ h1, h2, h3, h4 {
 }
 
 .car-info {
-    padding: 25px;
+    padding: 20px;
+    text-align: center;
 }
 
 .car-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--primary-color);
+    margin-bottom: 5px;
 }
 
 .car-price {
     color: var(--secondary-color);
     font-weight: 800;
-    font-size: 1.25rem;
-    margin-bottom: 15px;
+    font-size: 1.1rem;
 }
 
-.car-features {
+/* --- Ventana Modal --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+    animation: fadeIn 0.3s;
 }
 
-.feature {
-    background-color: var(--bg-light);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-weight: 600;
-}
-
-.scarcity-alert {
-    background-color: rgba(255, 51, 102, 0.1);
-    color: var(--accent-color);
-    padding: 10px;
-    border-radius: var(--radius-sm);
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid rgba(255, 51, 102, 0.2);
-}
-
-/* --- Lugares Turísticos (Glassmorphism) --- */
-.places-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.modal-content {
+    background-color: var(--bg-white);
     border-radius: var(--radius-lg);
-    overflow: hidden;
-    color: white;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    animation: slideInDown 0.4s;
 }
 
-.place-img-wrapper {
-    height: 200px;
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 10;
+}
+
+.close-modal:hover {
+    color: var(--accent-color);
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px;
+}
+
+.modal-img-wrapper {
+    background-color: #f1f5f9;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-img-wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+.badge-sm {
+    background-color: #e2e8f0;
+    color: var(--text-muted);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.car-price-large {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.modal-specs {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.modal-specs li {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-specs i {
+    color: var(--primary-color);
+    width: 25px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} to {opacity: 1}
+}
+@keyframes slideInDown {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+
+/* --- Destinos Turísticos (Tailwind Logic CSS) --- */
+.places-grid-tailwind {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Mobile default */
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+    .places-grid-tailwind {
+        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+    }
+}
+
+@media (min-width: 1024px) {
+    .places-grid-tailwind {
+        grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+    }
+}
+
+.tailwind-card {
+    background-color: #ffffff;
+    border-radius: 1rem; /* rounded-2xl */
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+}
+
+.tw-img-wrapper {
+    width: 100%;
+    height: 250px;
     overflow: hidden;
 }
 
-.place-img-wrapper img {
+.hover-scale {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
-.glass-card:hover .place-img-wrapper img {
-    transform: scale(1.15);
+.tailwind-card:hover .hover-scale {
+    transform: scale(1.05); /* hover:scale-105 */
 }
 
-.place-info {
-    padding: 25px;
+.tw-info {
+    padding: 1.5rem;
+}
+
+.tw-info h3 {
+    font-weight: 700;
+    color: #1f2937; /* gray-800 */
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.tw-info p {
+    color: #6b7280; /* gray-500 */
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.map-container {
+    background: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.map-container h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.map-wrapper iframe {
+    border-radius: 0.5rem;
 }
 
 /* --- Quiénes Somos --- */
@@ -559,7 +737,7 @@ h1, h2, h3, h4 {
 }
 
 .accordion-header.active .icon {
-    transform: rotate(45deg); /* Cambia el + por un X */
+    transform: rotate(45deg);
 }
 
 .accordion-content {
@@ -644,9 +822,11 @@ h1, h2, h3, h4 {
 }
 
 .footer-logo {
-    height: 50px;
-    margin-bottom: 15px;
+    height: 60px;
+    background: #fff;
+    padding: 5px;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .footer-links a {
@@ -774,6 +954,11 @@ h1, h2, h3, h4 {
     
     .nosotros-content, .contacto-wrapper {
         flex-direction: column;
+    }
+
+    .modal-body {
+        grid-template-columns: 1fr;
+        padding: 20px;
     }
     
     .floating-wa {
