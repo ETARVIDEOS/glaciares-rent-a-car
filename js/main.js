@@ -91,6 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="car-info">
                         <h3 class="car-title">${car.name}</h3>
                         <p class="car-price">${car.price}</p>
+                        
+                        <div class="scarcity-alert">
+                            <span><i class="fa-solid fa-fire"></i> ¡Queda solo 1 unidad!</span>
+                            <span class="timer" data-time="600">10:00</span>
+                        </div>
+                        
                         <span class="badge-sm" style="margin-top: 10px; display: inline-block;">Ver Detalles</span>
                     </div>
                 </div>
@@ -113,9 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Eventos de Pestañas
     tabButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            // Remover active de todos
             tabButtons.forEach(b => b.classList.remove('active'));
-            // Añadir active al clickeado
             e.target.classList.add('active');
             
             const category = e.target.getAttribute('data-category');
@@ -136,13 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modal-trans').textContent = car.transmission;
         document.getElementById('modal-fuel').textContent = car.fuel;
         
-        // Link dinámico de Whatsapp
         const message = `Hola Glaciares Rent a Car. Me gustaría consultar disponibilidad por el vehículo: ${car.name} (${car.category}).`;
         const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
         document.getElementById('modal-ws-btn').href = waUrl;
         
         modal.classList.add('show');
-        document.body.style.overflow = 'hidden'; // Prevenir scroll de fondo
+        document.body.style.overflow = 'hidden';
     }
 
     const closeModalBtn = document.querySelector('.close-modal');
@@ -152,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = 'auto';
         });
         
-        // Cerrar al hacer click fuera del contenido
         window.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.remove('show');
@@ -164,13 +166,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 4. Swiper del Hero Background ---
     if (document.querySelector('.hero-swiper')) {
         new Swiper('.hero-swiper', {
-            effect: 'fade', // Transición suave (fade)
+            effect: 'fade',
             loop: true,
             autoplay: {
                 delay: 4000,
                 disableOnInteraction: false,
             },
-            allowTouchMove: false // No interactivo, solo fondo
+            allowTouchMove: false
         });
     }
 
@@ -263,7 +265,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 9. Burbujas Rotatorias (Social Proof) ---
+    // --- 9. Contador Regresivo Scarcity (¡Queda solo 1 unidad!) ---
+    setInterval(() => {
+        // Obtenemos los timers dinámicamente porque se re-renderizan al cambiar pestaña
+        const timers = document.querySelectorAll('.timer');
+        timers.forEach(timer => {
+            let time = parseInt(timer.getAttribute('data-time'));
+            if (time > 0) {
+                time--;
+                timer.setAttribute('data-time', time);
+                
+                let minutes = Math.floor(time / 60);
+                let seconds = time % 60;
+                
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                
+                timer.textContent = `${minutes}:${seconds}`;
+            }
+        });
+    }, 1000);
+
+    // --- 10. Burbujas Rotatorias (Social Proof) ---
     const toastContainer = document.getElementById('toast-container');
     const names = ['Juan Pérez', 'María González', 'Carlos Silva', 'Ana Muñoz', 'Pedro Reyes'];
     
@@ -304,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scheduleNextToast();
     }, 3000);
 
-    // --- 10. Acordeón Términos y Condiciones ---
+    // --- 11. Acordeón Términos y Condiciones ---
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     accordionHeaders.forEach(header => {
         header.addEventListener('click', () => {
@@ -318,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 11. Formulario de Contacto Inteligente ---
+    // --- 12. Formulario de Contacto Inteligente ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -333,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 12. Botón Flotante Global ---
+    // --- 13. Botón Flotante Global ---
     const floatingBtn = document.getElementById('floating-wa');
     if (floatingBtn) {
         floatingBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola,%20me%20gustar%C3%ADa%20cotizar%20un%20arriendo%20de%20veh%C3%ADculo.`;

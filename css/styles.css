@@ -2,7 +2,7 @@
 :root {
     --primary-color: #0A2540; /* Deep blue / Patagonia */
     --secondary-color: #00D4FF; /* Vibrant cyan */
-    --accent-color: #FF3366; /* Red/Pink for scarcity/urgency */
+    --accent-color: #ff3b68; /* Red/Pink for scarcity/urgency */
     --text-main: #333333;
     --text-muted: #666666;
     --bg-light: #F8FAFC;
@@ -71,11 +71,11 @@ h1, h2, h3, h4 {
 
 .text-dark-xl {
     font-size: 2.5rem;
-    color: #1f2937; /* tailwind gray-800 */
+    color: #1f2937;
     font-weight: 800;
 }
 .text-gray-medium {
-    color: #6b7280; /* tailwind gray-500 */
+    color: #6b7280;
     font-size: 1.1rem;
 }
 
@@ -108,7 +108,7 @@ h1, h2, h3, h4 {
 
 /* Animations Initialization */
 .anim-elem {
-    opacity: 0; /* Hidden before IntersectionObserver kicks in */
+    opacity: 0;
 }
 
 /* --- Header --- */
@@ -129,8 +129,8 @@ h1, h2, h3, h4 {
 }
 
 .logo img {
-    height: 50px; /* Reduced to fit better */
-    background-color: var(--primary-color); /* Contrast for white logo */
+    height: 50px;
+    background-color: var(--primary-color);
     padding: 5px 10px;
     border-radius: var(--radius-sm);
 }
@@ -147,7 +147,7 @@ h1, h2, h3, h4 {
     color: var(--secondary-color);
 }
 
-/* --- Hero Section (Swiper Background) --- */
+/* --- Hero Section --- */
 .hero {
     position: relative;
     padding: 150px 0 180px;
@@ -156,7 +156,7 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* For swiper */
+    overflow: hidden;
 }
 
 .hero-swiper {
@@ -237,6 +237,9 @@ h1, h2, h3, h4 {
 }
 .custom-shape-divider-bottom-white .shape-fill {
     fill: var(--bg-white);
+}
+.custom-shape-divider-bottom-light .shape-fill {
+    fill: var(--bg-light);
 }
 
 /* --- Botones --- */
@@ -386,7 +389,7 @@ h1, h2, h3, h4 {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
-    cursor: pointer; /* To indicate it opens modal */
+    cursor: pointer;
     border: 1px solid rgba(0,0,0,0.05);
 }
 
@@ -433,6 +436,27 @@ h1, h2, h3, h4 {
     color: var(--secondary-color);
     font-weight: 800;
     font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Scarcity Alert (Contador) */
+.scarcity-alert {
+    background-color: #fff0f3;
+    border: 1px solid #ffccd5;
+    color: var(--accent-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.scarcity-alert i {
+    margin-right: 5px;
 }
 
 /* --- Ventana Modal --- */
@@ -464,6 +488,8 @@ h1, h2, h3, h4 {
     position: relative;
     box-shadow: var(--shadow-lg);
     animation: slideInDown 0.4s;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .close-modal {
@@ -549,31 +575,31 @@ h1, h2, h3, h4 {
 }
 
 
-/* --- Destinos Turísticos (Tailwind Logic CSS) --- */
+/* --- Destinos Turísticos --- */
 .places-grid-tailwind {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Mobile default */
+    grid-template-columns: repeat(1, 1fr);
     gap: 30px;
     margin-bottom: 50px;
 }
 
 @media (min-width: 768px) {
     .places-grid-tailwind {
-        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 1024px) {
     .places-grid-tailwind {
-        grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 .tailwind-card {
     background-color: #ffffff;
-    border-radius: 1rem; /* rounded-2xl */
+    border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .tw-img-wrapper {
@@ -590,7 +616,7 @@ h1, h2, h3, h4 {
 }
 
 .tailwind-card:hover .hover-scale {
-    transform: scale(1.05); /* hover:scale-105 */
+    transform: scale(1.05);
 }
 
 .tw-info {
@@ -599,13 +625,13 @@ h1, h2, h3, h4 {
 
 .tw-info h3 {
     font-weight: 700;
-    color: #1f2937; /* gray-800 */
+    color: #1f2937;
     margin-bottom: 0.5rem;
     font-size: 1.25rem;
 }
 
 .tw-info p {
-    color: #6b7280; /* gray-500 */
+    color: #6b7280;
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -692,7 +718,6 @@ h1, h2, h3, h4 {
     font-size: 0.9rem;
 }
 
-/* Swiper Pagination Color */
 .swiper-pagination-bullet-active {
     background: var(--secondary-color) !important;
 }
@@ -749,6 +774,41 @@ h1, h2, h3, h4 {
 .accordion-content p {
     padding: 0 25px 20px;
     color: var(--text-muted);
+}
+
+/* --- Dónde Encontrarnos (Nueva Sección) --- */
+.ubicacion-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.ubicacion-card {
+    flex: 1;
+    min-width: 250px;
+    background: var(--bg-white);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.ubicacion-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.ubicacion-card h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.ubicacion-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
 }
 
 /* --- Contacto --- */

@@ -33,8 +33,8 @@
             </a>
             <nav class="nav">
                 <a href="#inicio">Inicio</a>
+                <a href="#flota">Flota</a>
                 <a href="#servicios">Servicios</a>
-                <a href="#flota">Nuestra Flota</a>
                 <a href="#lugares">Destinos</a>
                 <a href="#nosotros">Nosotros</a>
                 <a href="#contacto">Contacto</a>
@@ -42,9 +42,8 @@
         </div>
     </header>
 
-    <!-- Hero Section (Premium Slider + Typed + Shape Divider) -->
+    <!-- 1. Hero Section -->
     <section id="inicio" class="hero">
-        <!-- Hero Background Slider -->
         <div class="swiper hero-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="PAISAJES/142423.webp" alt="Paisaje Patagonia"></div>
@@ -65,7 +64,6 @@
             <a href="#flota" class="btn btn-primary anim-elem" data-animation="animate__bounceIn" style="animation-delay: 1s">Explorar Vehículos</a>
         </div>
         
-        <!-- Shape Divider Curve -->
         <div class="custom-shape-divider-bottom">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.81,21.5,147.4,49.2,221.39,63.44Z" class="shape-fill"></path>
@@ -73,35 +71,29 @@
         </div>
     </section>
 
-    <!-- Contadores Animados (Nueva Sección Premium) -->
-    <section class="stats-section section" style="background-color: var(--bg-white);">
+    <!-- 2. Flota Section -->
+    <section id="flota" class="flota section">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card anim-elem" data-animation="animate__zoomIn">
-                    <div class="stat-icon"><i class="fa-solid fa-car-side"></i></div>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Traslados Exitosos</p>
-                </div>
-                <div class="stat-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.2s">
-                    <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
-                    <h3 class="counter" data-target="100" data-suffix="%">0</h3>
-                    <p>Clientes Satisfechos</p>
-                </div>
-                <div class="stat-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.4s">
-                    <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
-                    <h3 class="counter" data-target="24">0</h3>
-                    <p>Horas de Asistencia</p>
-                </div>
-                <div class="stat-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.6s">
-                    <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                    <h3 class="counter" data-target="2">0</h3>
-                    <p>Países de Cobertura</p>
-                </div>
+            <div class="section-title anim-elem" data-animation="animate__fadeInUp">
+                <h2>Nuestra Flota Premium</h2>
+                <p>Seleccionada para ofrecerte comodidad, estilo y seguridad incomparable.</p>
+                <div class="separator-line"></div>
+            </div>
+
+            <div class="category-tabs anim-elem" data-animation="animate__fadeInUp">
+                <button class="tab-btn active" data-category="todos">Todos</button>
+                <button class="tab-btn" data-category="Citycar">Citycar</button>
+                <button class="tab-btn" data-category="SUV">SUV</button>
+                <button class="tab-btn" data-category="Furgón">Furgón</button>
+            </div>
+
+            <div class="grid cars-grid" id="cars-grid">
+                <!-- Se inyecta por JS -->
             </div>
         </div>
     </section>
 
-    <!-- Servicios Section -->
+    <!-- 3. Servicios Section -->
     <section id="servicios" class="servicios section" style="background-color: var(--bg-light);">
         <div class="container">
             <div class="section-title anim-elem" data-animation="animate__fadeInUp">
@@ -132,145 +124,8 @@
         </div>
     </section>
 
-    <!-- Flota Section (Tabs & Modal) -->
-    <section id="flota" class="flota section">
-        <div class="container">
-            <div class="section-title anim-elem" data-animation="animate__fadeInUp">
-                <h2>Nuestra Flota Premium</h2>
-                <p>Seleccionada para ofrecerte comodidad, estilo y seguridad incomparable.</p>
-                <div class="separator-line"></div>
-            </div>
-
-            <!-- Tabs de Categorías -->
-            <div class="category-tabs anim-elem" data-animation="animate__fadeInUp">
-                <button class="tab-btn active" data-category="todos">Todos</button>
-                <button class="tab-btn" data-category="Citycar">Citycar</button>
-                <button class="tab-btn" data-category="SUV">SUV</button>
-                <button class="tab-btn" data-category="Furgón">Furgón</button>
-            </div>
-
-            <div class="grid cars-grid" id="cars-grid">
-                <!-- Se inyecta por JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Destinos Turísticos (Tailwind-like Logic) -->
-    <section id="lugares" class="lugares section parallax-bg-2" style="background-image: url('PAISAJES/patagonia-2-weeks-itinerary-chile-argentina-main-image-hd-op.jpg');">
-        <div class="hero-overlay" style="opacity: 0.90; background: linear-gradient(135deg, rgba(243, 244, 246, 0.95) 0%, rgba(229, 231, 235, 0.95) 100%);"></div>
-        <div class="container" style="position: relative; z-index: 2;">
-            <div class="section-title anim-elem" data-animation="animate__fadeInUp">
-                <h2 class="text-dark-xl">Descubre la Región de Magallanes</h2>
-                <p class="text-gray-medium">Los destinos más impresionantes que puedes visitar con nuestros vehículos.</p>
-                <div class="separator-line"></div>
-            </div>
-            
-            <div class="places-grid-tailwind">
-                <!-- Tarjeta 1 -->
-                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn">
-                    <div class="tw-img-wrapper">
-                        <img src="SECCION LUGARES TURISTICOS/TORRES DEL PAINE.jpg" alt="Parque Nacional Torres del Paine" class="hover-scale">
-                    </div>
-                    <div class="tw-info">
-                        <h3>Parque Nacional Torres del Paine</h3>
-                        <p>Ícono mundial de la Patagonia. Maravíllate con sus picos de granito, lagos glaciares y fauna silvestre. Perfecto para recorrer en un SUV.</p>
-                    </div>
-                </div>
-                
-                <!-- Tarjeta 2 -->
-                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.1s">
-                    <div class="tw-img-wrapper">
-                        <img src="SECCION LUGARES TURISTICOS/MOMUMENTO LOS PINGUINOS.jpg" alt="Monumento Natural Los Pingüinos" class="hover-scale">
-                    </div>
-                    <div class="tw-info">
-                        <h3>Monumento Natural Los Pingüinos</h3>
-                        <p>Conduce hasta el muelle y navega a Isla Magdalena para caminar entre miles de pingüinos en su hábitat natural.</p>
-                    </div>
-                </div>
-                
-                <!-- Tarjeta 3 -->
-                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.2s">
-                    <div class="tw-img-wrapper">
-                        <img src="SECCION LUGARES TURISTICOS/Parque-del-estrecho.jpg" alt="Fuerte Bulnes" class="hover-scale">
-                    </div>
-                    <div class="tw-info">
-                        <h3>Parque del Estrecho (Fuerte Bulnes)</h3>
-                        <p>A solo 50 km al sur de Punta Arenas. Un viaje lleno de historia y paisajes costeros impresionantes.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 4 -->
-                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.3s">
-                    <div class="tw-img-wrapper">
-                        <img src="SECCION LUGARES TURISTICOS/place-des-armes-munoz-gamero--v1-1200-800.jpeg" alt="Plaza de Armas" class="hover-scale">
-                    </div>
-                    <div class="tw-info">
-                        <h3>Plaza de Armas Muñoz Gamero</h3>
-                        <p>El corazón histórico de Punta Arenas. Rodeada de palacios antiguos y la icónica estatua de Hernando de Magallanes.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 5 -->
-                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.4s">
-                    <div class="tw-img-wrapper">
-                        <img src="SECCION LUGARES TURISTICOS/COSTANERA DEL ESTRECHO.jpg" alt="Costanera del Estrecho" class="hover-scale">
-                    </div>
-                    <div class="tw-info">
-                        <h3>Costanera del Estrecho</h3>
-                        <p>Un paseo imperdible por la ciudad con vista directa al majestuoso Estrecho de Magallanes y Tierra del Fuego.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 6 -->
-                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.5s">
-                    <div class="tw-img-wrapper">
-                        <img src="SECCION LUGARES TURISTICOS/FARO SAN ISIDRO.jpg" alt="Faro San Isidro" class="hover-scale">
-                    </div>
-                    <div class="tw-info">
-                        <h3>Faro San Isidro</h3>
-                        <p>Conduce hasta el fin del camino y emprende una caminata única hacia el histórico faro que ilumina el estrecho.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mapa de la Aventura -->
-            <div class="map-container premium-shadow anim-elem" data-animation="animate__fadeInUp">
-                <h3>Mapa de la Aventura</h3>
-                <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4905183.176421319!2d-78.29340625906354!3d-52.012554699566996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdb46af493a5eaeb%3A0xc6ba0cdb6859e9a4!2sRegi%C3%B3n%20de%20Magallanes%20y%20de%20la%20Ant%C3%A1rtica%20Chilena!5e0!3m2!1ses-419!2scl!4v1714000000000!5m2!1ses-419!2scl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Shape Divider Top for next section -->
-        <div class="custom-shape-divider-bottom custom-shape-divider-bottom-white">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.81,21.5,147.4,49.2,221.39,63.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- Quiénes Somos -->
-    <section id="nosotros" class="nosotros section" style="background-color: var(--bg-white);">
-        <div class="container">
-            <div class="nosotros-content">
-                <div class="nosotros-img anim-elem" data-animation="animate__slideInLeft">
-                    <img src="LOGOSINFONDO.png" alt="Glaciares Rent a Car" class="premium-shadow" style="background-color: var(--primary-color);">
-                </div>
-                <div class="nosotros-text anim-elem" data-animation="animate__slideInRight">
-                    <h2 class="dual-color">Compromiso con la Excelencia</h2>
-                    <p>En <strong>Glaciares Rent a Car</strong> entendemos que recorrer la Patagonia es más que un simple viaje; es la aventura de tu vida. Somos una empresa familiar con profundas raíces en Magallanes, dedicada a ofrecer una experiencia de arriendo superior.</p>
-                    <p>Nuestra misión es ser tu socio de confianza en esta exploración. Cuidamos cada detalle, desde el mantenimiento riguroso de la flota hasta la atención personalizada, garantizando que tu única preocupación sea disfrutar de los majestuosos paisajes de la Patagonia chileno-argentina.</p>
-                    <div class="signature">
-                        <p><em>— El Equipo de Glaciares</em></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Carrusel de Testimonios -->
-    <section class="testimonios section" style="background-color: var(--bg-light);">
+    <!-- 4. Reseñas (Testimonios) -->
+    <section class="testimonios section" style="background-color: var(--bg-white);">
         <div class="container">
             <div class="section-title anim-elem" data-animation="animate__fadeInUp">
                 <h2>Clientes Satisfechos</h2>
@@ -322,8 +177,110 @@
         </div>
     </section>
 
-    <!-- Términos y Condiciones -->
-    <section id="terminos" class="terminos section">
+    <!-- 5. Destinos Turísticos -->
+    <section id="lugares" class="lugares section parallax-bg-2" style="background-image: url('PAISAJES/patagonia-2-weeks-itinerary-chile-argentina-main-image-hd-op.jpg');">
+        <div class="hero-overlay" style="opacity: 0.90; background: linear-gradient(135deg, rgba(243, 244, 246, 0.95) 0%, rgba(229, 231, 235, 0.95) 100%);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-title anim-elem" data-animation="animate__fadeInUp">
+                <h2 class="text-dark-xl">Descubre la Región de Magallanes</h2>
+                <p class="text-gray-medium">Los destinos más impresionantes que puedes visitar con nuestros vehículos.</p>
+                <div class="separator-line"></div>
+            </div>
+            
+            <div class="places-grid-tailwind">
+                <!-- Tarjetas de lugares -->
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn">
+                    <div class="tw-img-wrapper"><img src="SECCION LUGARES TURISTICOS/TORRES DEL PAINE.jpg" alt="Parque Nacional Torres del Paine" class="hover-scale"></div>
+                    <div class="tw-info"><h3>Parque Nacional Torres del Paine</h3><p>Ícono mundial de la Patagonia. Maravíllate con sus picos de granito, lagos glaciares y fauna silvestre. Perfecto para recorrer en un SUV.</p></div>
+                </div>
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.1s">
+                    <div class="tw-img-wrapper"><img src="SECCION LUGARES TURISTICOS/MOMUMENTO LOS PINGUINOS.jpg" alt="Monumento Natural Los Pingüinos" class="hover-scale"></div>
+                    <div class="tw-info"><h3>Monumento Natural Los Pingüinos</h3><p>Conduce hasta el muelle y navega a Isla Magdalena para caminar entre miles de pingüinos en su hábitat natural.</p></div>
+                </div>
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.2s">
+                    <div class="tw-img-wrapper"><img src="SECCION LUGARES TURISTICOS/Parque-del-estrecho.jpg" alt="Fuerte Bulnes" class="hover-scale"></div>
+                    <div class="tw-info"><h3>Parque del Estrecho (Fuerte Bulnes)</h3><p>A solo 50 km al sur de Punta Arenas. Un viaje lleno de historia y paisajes costeros impresionantes.</p></div>
+                </div>
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.3s">
+                    <div class="tw-img-wrapper"><img src="SECCION LUGARES TURISTICOS/place-des-armes-munoz-gamero--v1-1200-800.jpeg" alt="Plaza de Armas" class="hover-scale"></div>
+                    <div class="tw-info"><h3>Plaza de Armas Muñoz Gamero</h3><p>El corazón histórico de Punta Arenas. Rodeada de palacios antiguos y la icónica estatua de Hernando de Magallanes.</p></div>
+                </div>
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.4s">
+                    <div class="tw-img-wrapper"><img src="SECCION LUGARES TURISTICOS/COSTANERA DEL ESTRECHO.jpg" alt="Costanera del Estrecho" class="hover-scale"></div>
+                    <div class="tw-info"><h3>Costanera del Estrecho</h3><p>Un paseo imperdible por la ciudad con vista directa al majestuoso Estrecho de Magallanes y Tierra del Fuego.</p></div>
+                </div>
+                <div class="tailwind-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.5s">
+                    <div class="tw-img-wrapper"><img src="SECCION LUGARES TURISTICOS/FARO SAN ISIDRO.jpg" alt="Faro San Isidro" class="hover-scale"></div>
+                    <div class="tw-info"><h3>Faro San Isidro</h3><p>Conduce hasta el fin del camino y emprende una caminata única hacia el histórico faro que ilumina el estrecho.</p></div>
+                </div>
+            </div>
+
+            <!-- Mapa Zoom en Punta Arenas -->
+            <div class="map-container premium-shadow anim-elem" data-animation="animate__fadeInUp">
+                <h3>Mapa de la Aventura</h3>
+                <div class="map-wrapper">
+                    <!-- Mapa centrado en Punta Arenas con zoom mayor (zoom=9 aprox) -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1135439.9575975107!2d-72.55160875691074!3d-53.11195610899387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdb2632b8510fbc3%3A0x72a5a017b2b62719!2sPunta%20Arenas%2C%20Magallanes%20y%20la%20Ant%C3%A1rtica%20Chilena!5e0!3m2!1ses-419!2scl!4v1714000000000!5m2!1ses-419!2scl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="custom-shape-divider-bottom custom-shape-divider-bottom-light">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.81,21.5,147.4,49.2,221.39,63.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 6. Contadores Animados -->
+    <section class="stats-section section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card anim-elem" data-animation="animate__zoomIn">
+                    <div class="stat-icon"><i class="fa-solid fa-car-side"></i></div>
+                    <h3 class="counter" data-target="1500">0</h3>
+                    <p>Traslados Exitosos</p>
+                </div>
+                <div class="stat-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.2s">
+                    <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+                    <h3 class="counter" data-target="100" data-suffix="%">0</h3>
+                    <p>Clientes Satisfechos</p>
+                </div>
+                <div class="stat-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.4s">
+                    <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3 class="counter" data-target="24">0</h3>
+                    <p>Horas de Asistencia</p>
+                </div>
+                <div class="stat-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.6s">
+                    <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <h3 class="counter" data-target="2">0</h3>
+                    <p>Países de Cobertura</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Quiénes Somos -->
+    <section id="nosotros" class="nosotros section" style="background-color: var(--bg-white);">
+        <div class="container">
+            <div class="nosotros-content">
+                <div class="nosotros-img anim-elem" data-animation="animate__slideInLeft">
+                    <img src="LOGOSINFONDO.png" alt="Glaciares Rent a Car" class="premium-shadow" style="background-color: var(--primary-color);">
+                </div>
+                <div class="nosotros-text anim-elem" data-animation="animate__slideInRight">
+                    <h2 class="dual-color">Compromiso con la Excelencia</h2>
+                    <p>En <strong>Glaciares Rent a Car</strong> entendemos que recorrer la Patagonia es más que un simple viaje; es la aventura de tu vida. Somos una empresa familiar con profundas raíces en Magallanes, dedicada a ofrecer una experiencia de arriendo superior.</p>
+                    <p>Nuestra misión es ser tu socio de confianza en esta exploración. Cuidamos cada detalle, desde el mantenimiento riguroso de la flota hasta la atención personalizada, garantizando que tu única preocupación sea disfrutar de los majestuosos paisajes de la Patagonia chileno-argentina.</p>
+                    <div class="signature">
+                        <p><em>— El Equipo de Glaciares</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Términos y Condiciones -->
+    <section id="terminos" class="terminos section" style="background-color: var(--bg-light);">
         <div class="container">
             <div class="section-title anim-elem" data-animation="animate__fadeInUp">
                 <h2>Condiciones Generales</h2>
@@ -360,7 +317,41 @@
         </div>
     </section>
 
-    <!-- Contacto Inteligente -->
+    <!-- 9. Dónde Encontrarnos -->
+    <section id="ubicacion" class="ubicacion section" style="background-color: var(--bg-white);">
+        <div class="container">
+            <div class="section-title anim-elem" data-animation="animate__fadeInUp">
+                <h2>Dónde Encontrarnos</h2>
+                <p>Visítanos en nuestra oficina principal en Punta Arenas.</p>
+                <div class="separator-line"></div>
+            </div>
+            
+            <div class="ubicacion-container anim-elem" data-animation="animate__fadeInUp">
+                <div class="ubicacion-card">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <h4>Dirección</h4>
+                    <p>Av. Francisco Javier Reyna 0473,<br>Punta Arenas, Magallanes y Antártica Chilena</p>
+                </div>
+                <div class="ubicacion-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h4>Correo</h4>
+                    <p>glaciaresrentacar@gmail.com</p>
+                </div>
+                <div class="ubicacion-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Horario</h4>
+                    <p>Lunes a domingo<br>de 8:00 a 21:00 hs.</p>
+                </div>
+                <div class="ubicacion-card">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <h4>Formas de Pago</h4>
+                    <p>Tarjetas de crédito, a convenir</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Contacto Inteligente -->
     <section id="contacto" class="contacto section" style="background-color: var(--bg-light);">
         <div class="container">
             <div class="contacto-wrapper anim-elem" data-animation="animate__fadeInUp">
@@ -369,7 +360,7 @@
                     <p>Déjanos tus datos y te contactaremos en minutos por WhatsApp para afinar los detalles de tu reserva.</p>
                     
                     <ul class="contact-list">
-                        <li><i class="fa-solid fa-envelope"></i> reservas@glaciaresrentacar.cl</li>
+                        <li><i class="fa-solid fa-envelope"></i> glaciaresrentacar@gmail.com</li>
                         <li><i class="fa-brands fa-whatsapp"></i> +56 9 8333 5924</li>
                         <li><i class="fa-solid fa-clock"></i> Asistencia 24/7</li>
                     </ul>
