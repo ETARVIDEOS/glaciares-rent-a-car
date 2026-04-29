@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glaciares Rent a Car | Arriendo de Vehículos en la Patagonia</title>
+    <meta name="description" content="Arrienda tu vehículo ideal para explorar la Patagonia. Reserva inmediata por WhatsApp, las mejores tarifas y atención personalizada.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <img src="assets/logo.jpeg" alt="Glaciares Rent a Car Logo">
+            </a>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#flota">Nuestra Flota</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content fade-in-up">
+            <span class="badge">Especialistas en la Patagonia</span>
+            <h1>Tu Aventura en la Patagonia Comienza Aquí</h1>
+            <p>Arrienda el vehículo perfecto y explora sin límites. Reserva rápida, segura y directa por WhatsApp.</p>
+            <a href="#flota" class="btn btn-primary">Ver Vehículos Disponibles</a>
+        </div>
+    </section>
+
+    <!-- Flota Section -->
+    <section id="flota" class="flota section">
+        <div class="container">
+            <div class="section-title fade-in-up">
+                <h2>Elige tu Vehículo</h2>
+                <p>Nuestra flota está preparada para los desafíos de la Patagonia.</p>
+            </div>
+
+            <div class="grid cars-grid" id="cars-grid">
+                <!-- Los vehículos se generarán dinámicamente vía JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer section">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="assets/logo.jpeg" alt="Glaciares Rent a Car Logo" class="footer-logo">
+                <p>La mejor experiencia de arriendo de vehículos en la Patagonia.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Contacto Rápido</h3>
+                <p>📱 +56 9 8333 5924</p>
+                <p>✉️ contacto@glaciaresrentacar.cl</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Glaciares Rent a Car. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="#" id="floating-wa" class="floating-wa" target="_blank" aria-label="Contactar por WhatsApp">
+        <img src="assets/whatsapp-button.png" alt="WhatsApp">
+    </a>
+
+    <!-- Contenedor para Burbujas de Social Proof -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
