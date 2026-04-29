@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glaciares Rent a Car | Arriendo de Vehículos en la Patagonia</title>
-    <meta name="description" content="Arrienda tu vehículo ideal para explorar la Patagonia. Reserva inmediata por WhatsApp, las mejores tarifas y atención personalizada.">
+    <title>Glaciares Rent a Car | Experiencia Premium en la Patagonia</title>
+    <meta name="description" content="Arrienda tu vehículo ideal para explorar la Patagonia con estilo, seguridad y confort. Reserva inmediata por WhatsApp.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -25,7 +34,7 @@
             <nav class="nav">
                 <a href="#inicio">Inicio</a>
                 <a href="#servicios">Servicios</a>
-                <a href="#flota">Vehículos</a>
+                <a href="#flota">Nuestra Flota</a>
                 <a href="#lugares">Lugares</a>
                 <a href="#nosotros">Nosotros</a>
                 <a href="#contacto">Contacto</a>
@@ -33,205 +42,294 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
+    <!-- Hero Section (Premium Parallax + Typed + Shape Divider) -->
+    <section id="inicio" class="hero parallax-bg">
         <div class="hero-overlay"></div>
-        <div class="container hero-content fade-in-up">
-            <span class="badge">Recorrer la Patagonia es más fácil con Glaciares</span>
-            <h1>Tu Aventura en la Patagonia Comienza Aquí</h1>
-            <p>Nuestro compromiso es ofrecer una disponibilidad total y un soporte ininterrumpido. Operamos 24 horas al día, 7 días a la semana, garantizando tu seguridad y tranquilidad.</p>
-            <a href="#flota" class="btn btn-primary">Ver Vehículos Disponibles</a>
+        <div class="container hero-content">
+            <span class="badge anim-elem" data-animation="animate__fadeInDown">Excelencia al Servicio del Turista</span>
+            <h1 class="anim-elem" data-animation="animate__slideInLeft">
+                Tu viaje a la Patagonia merece <br>
+                <span class="dual-color"><span id="typed-text"></span></span>
+            </h1>
+            <p class="anim-elem" data-animation="animate__fadeInUp" style="animation-delay: 0.5s">Vehículos premium, asistencia 24/7 y la libertad de llegar donde otros no pueden. Vive el fin del mundo sin preocupaciones.</p>
+            <a href="#flota" class="btn btn-primary anim-elem" data-animation="animate__bounceIn" style="animation-delay: 1s">Explorar Vehículos</a>
+        </div>
+        
+        <!-- Shape Divider Curve -->
+        <div class="custom-shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.81,21.5,147.4,49.2,221.39,63.44Z" class="shape-fill"></path>
+            </svg>
         </div>
     </section>
 
-    <!-- Servicios Section (Nueva) -->
-    <section id="servicios" class="servicios section">
+    <!-- Contadores Animados (Nueva Sección Premium) -->
+    <section class="stats-section section" style="background-color: var(--bg-white);">
         <div class="container">
-            <div class="section-title fade-in-up">
-                <h2>Nuestros Servicios de Arriendo</h2>
-                <p>Todo incluido para que solo te preocupes de disfrutar tu viaje en el fin del mundo.</p>
+            <div class="stats-grid">
+                <div class="stat-card anim-elem" data-animation="animate__zoomIn">
+                    <div class="stat-icon"><i class="fa-solid fa-car-side"></i></div>
+                    <h3 class="counter" data-target="1500">0</h3>
+                    <p>Traslados Exitosos</p>
+                </div>
+                <div class="stat-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.2s">
+                    <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+                    <h3 class="counter" data-target="100" data-suffix="%">0</h3>
+                    <p>Clientes Satisfechos</p>
+                </div>
+                <div class="stat-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.4s">
+                    <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3 class="counter" data-target="24">0</h3>
+                    <p>Horas de Asistencia</p>
+                </div>
+                <div class="stat-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.6s">
+                    <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <h3 class="counter" data-target="2">0</h3>
+                    <p>Países de Cobertura</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="servicios section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-title anim-elem" data-animation="animate__fadeInUp">
+                <h2>Ventajas de Nuestro Servicio</h2>
+                <p>Descubre los beneficios que nos distinguen como tu mejor opción en Magallanes.</p>
+                <div class="separator-line"></div>
             </div>
             
             <div class="grid services-grid">
-                <div class="service-card fade-in-up">
-                    <h3>Vehículos Sedan y City Cars</h3>
-                    <p>Ideales para recorrer la ciudad de Punta Arenas y alrededores con eficiencia.</p>
-                    <ul class="service-list">
-                        <li>✔️ Asistencia en ruta 24/7</li>
-                        <li>✔️ Kilometraje ilimitado</li>
-                    </ul>
-                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Auto Sedan" class="service-img car-bounce">
+                <div class="service-card anim-elem" data-animation="animate__slideInLeft">
+                    <div class="icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Seguridad y Confianza</h3>
+                    <p>Vehículos meticulosamente mantenidos para enfrentar los desafíos de la Patagonia, con asistencia en ruta 24/7 en toda la región.</p>
                 </div>
                 
-                <div class="service-card fade-in-up" style="transition-delay: 0.1s">
-                    <h3>Vehículos SUV (MT/AT)</h3>
-                    <p>La versatilidad que necesitas para explorar caminos de ripio con seguridad y espacio extra.</p>
-                    <ul class="service-list">
-                        <li>✔️ Asistencia en ruta 24/7</li>
-                        <li>✔️ Kilometraje ilimitado</li>
-                    </ul>
-                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Auto SUV" class="service-img car-bounce">
+                <div class="service-card anim-elem" data-animation="animate__fadeInUp">
+                    <div class="icon-wrapper"><i class="fa-solid fa-gas-pump"></i></div>
+                    <h3>Tarifas Transparentes</h3>
+                    <p>Confirmación inmediata con todo incluido. Sin costos ocultos, kilometraje libre y opciones de pago flexibles a tu medida.</p>
                 </div>
                 
-                <div class="service-card fade-in-up" style="transition-delay: 0.2s">
-                    <h3>Camionetas Pick-Up 4X4</h3>
-                    <p>Para las aventuras más exigentes. Conquista cualquier terreno con la potencia de nuestras 4x4.</p>
-                    <ul class="service-list">
-                        <li>✔️ Asistencia en ruta 24/7</li>
-                        <li>✔️ Kilometraje ilimitado</li>
-                    </ul>
-                    <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camioneta 4x4" class="service-img car-bounce">
+                <div class="service-card anim-elem" data-animation="animate__slideInRight">
+                    <div class="icon-wrapper"><i class="fa-solid fa-earth-americas"></i></div>
+                    <h3>Permiso Internacional</h3>
+                    <p>Gestionamos tu permiso notarial y seguros obligatorios para que puedas cruzar a Argentina y visitar El Calafate sin problemas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Flota Section (Actualizada) -->
-    <section id="flota" class="flota section" style="background-color: var(--bg-white);">
+    <!-- Flota Section -->
+    <section id="flota" class="flota section">
         <div class="container">
-            <div class="section-title fade-in-up">
-                <h2>Elige tu Vehículo</h2>
-                <p>Nuestra flota está preparada para los desafíos de la Patagonia, mantenida rigurosamente.</p>
+            <div class="section-title anim-elem" data-animation="animate__fadeInUp">
+                <h2>Nuestra Flota Premium</h2>
+                <p>Seleccionada para ofrecerte comodidad, estilo y seguridad incomparable.</p>
+                <div class="separator-line"></div>
             </div>
 
             <div class="grid cars-grid" id="cars-grid">
-                <!-- Los vehículos se generarán dinámicamente vía JavaScript -->
+                <!-- Se inyecta por JS -->
             </div>
         </div>
     </section>
 
-    <!-- Lugares Turísticos (Nueva) -->
-    <section id="lugares" class="lugares section">
-        <div class="container">
-            <div class="section-title fade-in-up">
+    <!-- Lugares Turísticos (Efecto Glassmorphism / Image Zoom) -->
+    <section id="lugares" class="lugares section parallax-bg-2">
+        <div class="hero-overlay" style="opacity: 0.85;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-title anim-elem" data-animation="animate__fadeInUp" style="color: white;">
                 <h2>Destinos Imperdibles</h2>
-                <p>Descubre los lugares turísticos que puedes visitar con tu vehículo arrendado.</p>
+                <p>Conecta con la naturaleza en los lugares más impresionantes del fin del mundo.</p>
+                <div class="separator-line bg-white"></div>
             </div>
             
             <div class="grid places-grid">
-                <div class="place-card fade-in-up">
+                <!-- Cards con estilo glassmorphism -->
+                <div class="place-card glass-card anim-elem" data-animation="animate__zoomIn">
                     <div class="place-img-wrapper">
                         <img src="https://images.unsplash.com/photo-1518182170546-076616fdfaaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Torres del Paine">
                     </div>
                     <div class="place-info">
-                        <h3>Parque Nacional Torres del Paine</h3>
-                        <p>Ícono mundial de la Patagonia, famoso por sus imponentes macizos de granito y ecosistemas únicos.</p>
+                        <h3>Torres del Paine</h3>
+                        <p>Ícono mundial de la Patagonia. Recorre el parque a tu propio ritmo con nuestros SUV.</p>
                     </div>
                 </div>
                 
-                <div class="place-card fade-in-up" style="transition-delay: 0.1s">
+                <div class="place-card glass-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.2s">
                     <div class="place-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1589139682522-8646b9a8e0f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Monumento Natural Los Pingüinos">
+                        <img src="https://images.unsplash.com/photo-1589139682522-8646b9a8e0f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pingüinos">
                     </div>
                     <div class="place-info">
-                        <h3>Monumento Natural Los Pingüinos</h3>
-                        <p>Navega a Isla Magdalena y camina entre miles de pingüinos de Magallanes en su hábitat natural.</p>
+                        <h3>Pingüineras</h3>
+                        <p>Observa a miles de pingüinos de Magallanes en su hábitat natural en Isla Magdalena.</p>
                     </div>
                 </div>
                 
-                <div class="place-card fade-in-up" style="transition-delay: 0.2s">
+                <div class="place-card glass-card anim-elem" data-animation="animate__zoomIn" style="animation-delay: 0.4s">
                     <div class="place-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1584998246820-2f3b940e729a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Glaciares y Estrecho">
+                        <img src="https://images.unsplash.com/photo-1584998246820-2f3b940e729a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Glaciares">
                     </div>
                     <div class="place-info">
-                        <h3>Parque del Estrecho de Magallanes</h3>
-                        <p>Visita la reconstrucción de Fuerte Bulnes, el primer asentamiento chileno en la Patagonia.</p>
+                        <h3>Glaciares Milenarios</h3>
+                        <p>Maravíllate con el hielo eterno de los glaciares Serrano, Balmaceda o Perito Moreno (Arg).</p>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Shape Divider Top for next section -->
+        <div class="custom-shape-divider-bottom custom-shape-divider-bottom-white">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.81,21.5,147.4,49.2,221.39,63.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
     </section>
 
-    <!-- Quiénes Somos (Nueva) -->
-    <section id="nosotros" class="nosotros section" style="background-color: var(--primary-color); color: white;">
-        <div class="container fade-in-up">
+    <!-- Quiénes Somos -->
+    <section id="nosotros" class="nosotros section" style="background-color: var(--bg-white);">
+        <div class="container">
             <div class="nosotros-content">
-                <div class="nosotros-text">
-                    <h2>Nuestra Historia en la Patagonia</h2>
-                    <p><strong>Glaciares Rent a Car</strong> es una empresa con profundas raíces en la región de Magallanes. Nacimos con la visión de ofrecer una experiencia de arriendo de vehículos superior, enfocada en la calidad, la seguridad y un servicio al cliente excepcional.</p>
-                    <p>Entendemos que recorrer la Patagonia es más que un simple viaje; es una aventura de vida. Por ello, nuestra flota está meticulosamente mantenida y equipada para enfrentar los desafíos de la región, asegurando que tu única preocupación sea disfrutar de los paisajes espectaculares.</p>
-                    <p>Nuestra misión es ser tu socio de confianza en la exploración de la Patagonia chileno-argentina, entregando no solo un vehículo, sino la llave a una experiencia inolvidable en el fin del mundo.</p>
+                <div class="nosotros-img anim-elem" data-animation="animate__slideInLeft">
+                    <img src="assets/logo.jpeg" alt="Glaciares Rent a Car" class="premium-shadow">
                 </div>
-                <div class="nosotros-img">
-                    <img src="assets/logo.jpeg" alt="Glaciares Rent a Car" style="border-radius: var(--radius-md); max-width: 100%; box-shadow: var(--shadow-lg);">
+                <div class="nosotros-text anim-elem" data-animation="animate__slideInRight">
+                    <h2 class="dual-color">Compromiso con la Excelencia</h2>
+                    <p>En <strong>Glaciares Rent a Car</strong> entendemos que recorrer la Patagonia es más que un simple viaje; es la aventura de tu vida. Somos una empresa familiar con profundas raíces en Magallanes, dedicada a ofrecer una experiencia de arriendo superior.</p>
+                    <p>Nuestra misión es ser tu socio de confianza en esta exploración. Cuidamos cada detalle, desde el mantenimiento riguroso de la flota hasta la atención personalizada, garantizando que tu única preocupación sea disfrutar de los majestuosos paisajes de la Patagonia chileno-argentina.</p>
+                    <div class="signature">
+                        <p><em>— El Equipo de Glaciares</em></p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Términos y Condiciones (Acordeón) (Nueva) -->
+    <!-- Carrusel de Testimonios (Estilo Elementor) -->
+    <section class="testimonios section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-title anim-elem" data-animation="animate__fadeInUp">
+                <h2>Clientes Satisfechos</h2>
+                <p>Nuestra mejor publicidad son las experiencias de quienes ya viajaron con nosotros.</p>
+                <div class="separator-line"></div>
+            </div>
+            
+            <!-- Swiper -->
+            <div class="swiper testimonial-swiper anim-elem" data-animation="animate__fadeInUp">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="quote">"Excelente servicio. Arrendamos una camioneta 4x4 para ir a Torres del Paine y todo impecable. El vehículo en perfectas condiciones y la atención por WhatsApp fue rapidísima."</p>
+                            <div class="author">
+                                <strong>Carlos M.</strong>
+                                <span>Santiago, Chile</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="quote">"Nos gestionaron todo para cruzar a El Calafate (Argentina). Fue un alivio no tener que preocuparnos de los trámites. Los recomiendo 100%, súper confiables."</p>
+                            <div class="author">
+                                <strong>Fernanda R.</strong>
+                                <span>Buenos Aires, Arg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="quote">"Viajamos en familia y pedimos sillas de bebé. Todo estaba instalado y limpio al llegar al aeropuerto. La transparencia en los precios fue lo que más me gustó."</p>
+                            <div class="author">
+                                <strong>Familia Soto</strong>
+                                <span>Concepción, Chile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Términos y Condiciones (Acordeón) -->
     <section id="terminos" class="terminos section">
         <div class="container">
-            <div class="section-title fade-in-up">
-                <h2>Términos y Condiciones Generales</h2>
-                <p>Transparencia y claridad en tu proceso de arriendo.</p>
+            <div class="section-title anim-elem" data-animation="animate__fadeInUp">
+                <h2>Condiciones Generales</h2>
+                <p>Reglas claras para un viaje tranquilo.</p>
+                <div class="separator-line"></div>
             </div>
             
-            <div class="accordion fade-in-up">
+            <div class="accordion anim-elem" data-animation="animate__zoomIn">
                 <div class="accordion-item">
-                    <button class="accordion-header">Requisitos y Documentación <span class="icon">+</span></button>
+                    <button class="accordion-header">Requisitos para Conducir <span class="icon"><i class="fa-solid fa-plus"></i></span></button>
                     <div class="accordion-content">
-                        <p>La edad mínima para arrendar un vehículo es de 20 años. Se requiere licencia de conducir vigente y cédula de identidad o pasaporte. Ningún conductor podrá manejar sin portar la documentación exigida por la autoridad.</p>
+                        <p>La edad mínima para arrendar es 20 años. Es obligatorio presentar licencia de conducir vigente y cédula de identidad o pasaporte. Todos los conductores adicionales deben registrarse al momento de la entrega.</p>
                     </div>
                 </div>
-                
                 <div class="accordion-item">
-                    <button class="accordion-header">Garantía del Arriendo <span class="icon">+</span></button>
+                    <button class="accordion-header">Garantía en Tarjeta de Crédito <span class="icon"><i class="fa-solid fa-plus"></i></span></button>
                     <div class="accordion-content">
-                        <p>Para asegurar el cumplimiento de las obligaciones contractuales, se exigirá una garantía mediante Tarjeta de Crédito (el monto varía según categoría, típicamente base $600.000). La devolución se efectúa una vez recepcionado el vehículo conforme.</p>
+                        <p>Exigimos un bloqueo de garantía en tarjeta de crédito (aprox. $600.000, dependiendo del vehículo). Esta retención se libera al devolver el auto en las mismas condiciones.</p>
                     </div>
                 </div>
-                
                 <div class="accordion-item">
-                    <button class="accordion-header">Combustible y Devolución <span class="icon">+</span></button>
+                    <button class="accordion-header">Política de Combustible <span class="icon"><i class="fa-solid fa-plus"></i></span></button>
                     <div class="accordion-content">
-                        <p>El vehículo se entrega con estanque lleno y debe devolverse de la misma forma. En caso de siniestro, robo o hurto, se debe denunciar a Carabineros dentro de 24 horas y dar aviso inmediato a nuestro soporte.</p>
+                        <p>Los vehículos se entregan con el estanque lleno y deben ser devueltos de la misma forma. En caso de no cumplir, se cobrará el combustible faltante más un cargo por servicio.</p>
                     </div>
                 </div>
-                
                 <div class="accordion-item">
-                    <button class="accordion-header">Permiso Internacional (Argentina) <span class="icon">+</span></button>
+                    <button class="accordion-header">Viajes a Argentina <span class="icon"><i class="fa-solid fa-plus"></i></span></button>
                     <div class="accordion-content">
-                        <p>Se permite la salida a Argentina, previa obtención de permiso notarial y seguros obligatorios. Este trámite debe solicitarse con anticipación y tiene un costo adicional.</p>
+                        <p>¡Sí, puedes cruzar! Solo debes avisarnos con anticipación para preparar el Permiso Notarial y el Seguro Obligatorio Internacional (ambos tienen costo extra).</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contáctanos (Formulario) (Nueva) -->
-    <section id="contacto" class="contacto section" style="background-color: var(--bg-white);">
+    <!-- Contacto Inteligente -->
+    <section id="contacto" class="contacto section" style="background-color: var(--bg-light);">
         <div class="container">
-            <div class="section-title fade-in-up">
-                <h2>¿Tienes alguna consulta?</h2>
-                <p>Escríbenos y te responderemos a la brevedad directamente por WhatsApp.</p>
-            </div>
-            
-            <div class="contacto-wrapper fade-in-up">
+            <div class="contacto-wrapper anim-elem" data-animation="animate__fadeInUp">
                 <div class="contacto-info">
-                    <h3>Información de Contacto</h3>
-                    <p><strong>Email:</strong> reservas@glaciaresrentacar.cl</p>
-                    <p><strong>Teléfono:</strong> +56 9 8333 5924</p>
-                    <p><strong>Atención:</strong> 24 Horas / 7 Días a la semana.</p>
-                    <div style="margin-top: 20px;">
-                        <img src="assets/whatsapp-button.png" alt="WhatsApp" width="50">
-                    </div>
+                    <h2>Hablemos</h2>
+                    <p>Déjanos tus datos y te contactaremos en minutos por WhatsApp para afinar los detalles de tu reserva.</p>
+                    
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-envelope"></i> reservas@glaciaresrentacar.cl</li>
+                        <li><i class="fa-brands fa-whatsapp"></i> +56 9 8333 5924</li>
+                        <li><i class="fa-solid fa-clock"></i> Asistencia 24/7</li>
+                    </ul>
                 </div>
                 
-                <form id="contact-form" class="contacto-form">
+                <form id="contact-form" class="contacto-form premium-shadow">
                     <div class="form-group">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+                        <input type="text" id="nombre" required placeholder="Nombre Completo">
                     </div>
                     <div class="form-group">
-                        <label for="fechas">Fechas de Viaje</label>
-                        <input type="text" id="fechas" placeholder="Ej: 15 al 20 de Diciembre">
+                        <input type="text" id="fechas" placeholder="Fechas de Viaje (Ej: 15-20 Nov)">
                     </div>
                     <div class="form-group">
-                        <label for="mensaje">Tu Mensaje o Consulta</label>
-                        <textarea id="mensaje" rows="4" required placeholder="Me gustaría cotizar un vehículo..."></textarea>
+                        <textarea id="mensaje" rows="4" required placeholder="¿Qué tipo de vehículo buscas?"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje por WhatsApp</button>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fa-brands fa-whatsapp"></i> Enviar Mensaje a WhatsApp
+                    </button>
                 </form>
             </div>
         </div>
@@ -241,14 +339,21 @@
     <footer class="footer section">
         <div class="container footer-content">
             <div class="footer-brand">
-                <img src="assets/logo.jpeg" alt="Glaciares Rent a Car Logo" class="footer-logo">
-                <p>La mejor experiencia de arriendo de vehículos en la Patagonia.</p>
+                <img src="assets/logo.jpeg" alt="Glaciares Logo" class="footer-logo">
+                <p>Tu socio de confianza en la Patagonia.</p>
             </div>
             <div class="footer-links">
-                <h3>Accesos Rápidos</h3>
-                <a href="#inicio" style="color: white; display: block; text-decoration: none; margin-bottom: 5px;">Inicio</a>
-                <a href="#flota" style="color: white; display: block; text-decoration: none; margin-bottom: 5px;">Nuestra Flota</a>
-                <a href="#terminos" style="color: white; display: block; text-decoration: none; margin-bottom: 5px;">Términos y Condiciones</a>
+                <h3>Enlaces Rápidos</h3>
+                <a href="#flota">Nuestra Flota</a>
+                <a href="#terminos">Condiciones</a>
+                <a href="#contacto">Cotizar</a>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -256,15 +361,19 @@
         </div>
     </footer>
 
-    <!-- Botón Flotante de WhatsApp -->
-    <a href="#" id="floating-wa" class="floating-wa" target="_blank" aria-label="Contactar por WhatsApp">
+    <!-- Floating WhatsApp -->
+    <a href="#" id="floating-wa" class="floating-wa" target="_blank">
         <img src="assets/whatsapp-button.png" alt="WhatsApp">
     </a>
 
-    <!-- Contenedor para Burbujas de Social Proof -->
+    <!-- Social Proof Toast -->
     <div id="toast-container" class="toast-container"></div>
 
-    <!-- Scripts -->
+    <!-- Scripts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    
+    <!-- Main Script -->
     <script src="js/main.js"></script>
 </body>
 </html>
