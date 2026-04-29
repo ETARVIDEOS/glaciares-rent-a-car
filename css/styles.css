@@ -181,6 +181,8 @@ h1, h2, h3, h4 {
     position: relative;
     z-index: 2;
     max-width: 800px;
+    width: 100%;
+    padding: 0 15px;
 }
 
 .badge {
@@ -194,6 +196,9 @@ h1, h2, h3, h4 {
     letter-spacing: 1px;
     margin-bottom: 20px;
     display: inline-block;
+    white-space: normal;
+    max-width: 100%;
+    line-height: 1.4;
 }
 
 .hero h1 {
@@ -1010,9 +1015,10 @@ h1, h2, h3, h4 {
     }
     
     .hero h1 {
-        font-size: 2rem; /* Reduced for mobile */
+        font-size: 1.8rem; /* Further reduced for mobile */
         line-height: 1.2;
         word-wrap: break-word;
+        padding: 0 10px;
     }
     
     .hero p {
@@ -1039,5 +1045,10 @@ h1, h2, h3, h4 {
     .toast-container {
         left: 20px;
         bottom: 90px;
+        right: 20px; /* Constrain width */
+    }
+    
+    .toast {
+        max-width: calc(100vw - 40px);
     }
 }
