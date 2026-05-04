@@ -9,18 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1,
             category: 'Citycar',
             name: 'SUZUKI SWIFT',
-            image: 'IMAGENES_GLACIARES_RENT/CITYCAR/SUSUKI SWIFT.webp',
+            image: 'IMAGENES_GLACIARES_NUEVO AUTOS/CITYCAR/SUZUKI SWIFT.jpeg',
             price: '$35.000 / día',
             transmission: 'Mecánico',
             passengers: '5',
-            fuel: 'Bencina'
+            fuel: 'Bencina',
+            scale: 1.1
         },
         {
             id: 2,
-            category: 'SUV',
-            name: 'JAC S3',
-            image: 'IMAGENES_GLACIARES_RENT/SUV/Novedades-Jac-S3-completo-Photoroom.png',
-            price: '$45.000 / día',
+            category: 'Citycar',
+            name: 'SUZUKI DZIRE',
+            image: 'IMAGENES_GLACIARES_NUEVO AUTOS/CITYCAR/SUZUKI DZIRE.jpeg',
+            price: '$35.000 / día',
             transmission: 'Mecánico',
             passengers: '5',
             fuel: 'Bencina',
@@ -30,44 +31,56 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 3,
             category: 'SUV',
             name: 'CHEVROLET CAPTIVA',
-            image: 'IMAGENES_GLACIARES_RENT/SUV/CAPTIVA.png',
+            image: 'IMAGENES_GLACIARES_NUEVO AUTOS/SUV/CHEVROTET CAPTIVA.jpeg',
             price: '$45.000 / día',
             transmission: 'Mecánico',
             passengers: '7',
             fuel: 'Bencina',
-            scale: 1.35
-        },
-        {
-            id: 4,
-            category: 'SUV',
-            name: 'FORD ECOSPORT',
-            image: 'IMAGENES_GLACIARES_RENT/SUV/FORD ECOSPORT.png',
-            price: '$45.000 / día',
-            transmission: 'Automático',
-            passengers: '5',
-            fuel: 'Bencina',
-            scale: 1.35
-        },
-        {
-            id: 5,
-            category: 'SUV',
-            name: 'SSANGYONG KORANDO',
-            image: 'IMAGENES_GLACIARES_RENT/SUV/KORANDO-Photoroom.png',
-            price: '$40.000 / día',
-            transmission: 'Mecánico',
-            passengers: '5',
-            fuel: 'Bencina'
+            scale: 1.25
         },
         {
             id: 6,
             category: 'Furgón',
             name: 'HYUNDAI H1',
-            image: 'IMAGENES_GLACIARES_RENT/FURGÓN/HYUNDAI-H-1- FURGON 9 PASAJEROS.png',
+            image: 'IMAGENES_GLACIARES_NUEVO AUTOS/FURGÓN/HYUNDAI H1.jpeg',
             price: '$65.000 / día',
             transmission: 'Mecánico',
             passengers: '9',
             fuel: 'Diesel',
-            scale: 1.15
+            scale: 1.1
+        },
+        {
+            id: 7,
+            category: 'SUV',
+            name: 'HYUNDAI TUCSON',
+            image: 'IMAGENES_GLACIARES_NUEVO AUTOS/SUV/HYUNDAI TUCSON (1).jpeg',
+            price: '$45.000 / día',
+            transmission: 'Automático',
+            passengers: '5',
+            fuel: 'Diesel',
+            scale: 1.2
+        },
+        {
+            id: 8,
+            category: 'SUV',
+            name: 'KIA SORENTO',
+            image: 'IMAGENES_GLACIARES_NUEVO AUTOS/SUV/KIA SORENTO.jpeg',
+            price: '$50.000 / día',
+            transmission: 'Automático',
+            passengers: '7',
+            fuel: 'Diesel',
+            scale: 1.2
+        },
+        {
+            id: 9,
+            category: 'SUV',
+            name: 'HYUNDAI TUCSON',
+            image: 'IMAGENES_GLACIARES_NUEVO AUTOS/SUV/HYUNDAI TUCSON (2).jpeg',
+            price: '$45.000 / día',
+            transmission: 'Automático',
+            passengers: '5',
+            fuel: 'Diesel',
+            scale: 1.2
         }
     ];
 
@@ -240,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 7. Typed.js (Efecto de Escritura en Hero) ---
     if (document.getElementById('typed-text')) {
         new Typed('#typed-text', {
-            strings: ['vehículos premium.', 'asistencia 24/7.', 'tranquilidad total.', 'la mejor experiencia.'],
+            strings: ['vehículos.', 'asistencia 24/7.', 'tranquilidad total.', 'la mejor experiencia.'],
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 2000,
